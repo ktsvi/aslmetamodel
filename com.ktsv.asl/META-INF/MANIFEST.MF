@@ -1,0 +1,26 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.ktsv.asl
+Bundle-ManifestVersion: 2
+Bundle-Name: com.ktsv.asl
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.ktsv.asl; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: eclipse.emf.abmodel,
+ org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.5.0",
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-11
+Export-Package: com.ktsv.asl.parser.antlr.internal,
+ com.ktsv.asl.formatting2,
+ com.ktsv.asl,
+ com.ktsv.asl.serializer,
+ com.ktsv.asl.parser.antlr,
+ com.ktsv.asl.generator,
+ com.ktsv.asl.services,
+ com.ktsv.asl.validation,
+ com.ktsv.asl.scoping
+Import-Package: org.apache.log4j
