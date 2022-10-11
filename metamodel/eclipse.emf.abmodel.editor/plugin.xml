@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.ui.newWizards">
+      <!-- @generated Asl -->
+      <category
+            id="org.eclipse.emf.ecore.Wizard.category.ID"
+            name="%_UI_Wizard_category"/>
+      <wizard
+            id="eclipse.emf.abmodel.model.abmodel.presentation.AbmodelModelWizardID"
+            name="%_UI_AbmodelModelWizard_label"
+            class="eclipse.emf.abmodel.model.abmodel.presentation.AbmodelModelWizard"
+            category="org.eclipse.emf.ecore.Wizard.category.ID"
+            icon="icons/full/obj16/AbmodelModelFile.gif">
+         <description>%_UI_AbmodelModelWizard_description</description>
+         <selection class="org.eclipse.core.resources.IResource"/>
+      </wizard>
+   </extension>
+
+   <extension point="org.eclipse.ui.editors">
+      <!-- @generated Asl -->
+      <editor
+            id="eclipse.emf.abmodel.model.abmodel.presentation.AbmodelEditorID"
+            name="%_UI_AbmodelEditor_label"
+            icon="icons/full/obj16/AbmodelModelFile.gif"
+            extensions="abmodel"
+            class="eclipse.emf.abmodel.model.abmodel.presentation.AbmodelEditor"
+            contributorClass="eclipse.emf.abmodel.model.abmodel.presentation.AbmodelActionBarContributor">
+      </editor>
+   </extension>
+
+</plugin>
