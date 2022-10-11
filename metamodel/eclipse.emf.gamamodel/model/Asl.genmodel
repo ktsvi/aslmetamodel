@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
+    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/eclipse.emf.abmodel/src" modelPluginID="eclipse.emf.abmodel"
+    modelName="Asl" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
+    importerID="org.eclipse.emf.importer.ecore" complianceLevel="5.0" copyrightFields="false"
+    operationReflection="true" importOrganizing="true">
+  <foreignModel>Asl.ecore</foreignModel>
+  <genPackages prefix="Abmodel" basePackage="eclipse.emf.abmodel.model" disposableProviderFactory="true"
+      ecorePackage="Asl.ecore#/">
+    <genClasses ecoreClass="Asl.ecore#//ABModel">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//ABModel/containsG"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//ABModel/containsS"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//ABModel/containsE"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ABModel/modelName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ABModel/description"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ABModel/keywords"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ABModel/author"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ABModel/createOn"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//AgentBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//AgentBlock/hasP"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//AgentBlock/hasPr"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//AgentBlock/nameAgent"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//AgentBlock/aspectName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//AgentBlock/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//AgentBlock/init"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//AgentBlock/aspectFunction"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//AgentBlock/agentArchitecture"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//AgentBlock/skillofagent"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//simplePlan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//simplePlan/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//GlobalBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//GlobalBlock/containsGl"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//GlobalBlock/containsSE"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//GlobalBlock/id"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//GlobalBlock/init"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//GlobalVariable">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//GlobalVariable/init"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//GlobalVariable/gvarName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//GlobalVariable/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//GlobalVariable/initValue"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Parameter">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Parameter/paramName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Parameter/targetVariable"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Output">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Output/id"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference Asl.ecore#//Output/hasM"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//Output/containsD"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//Output/hasEF"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//Output/hasI"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Display">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Display/displayName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Display/displayType"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Plan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Plan/planName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Plan/intention"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Monitor">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Monitor/label"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Monitor/targetVar"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//ExperimentBlock">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//ExperimentBlock/hasPa"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference Asl.ecore#//ExperimentBlock/output"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ExperimentBlock/type"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ExperimentBlock/expName"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Reflex">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Reflex/existReflex"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Reflex/goal"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//ComplexePlan">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ComplexePlan/returnType"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//ExportFile">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//ExportFile/fileName"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Inspector">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Inspector/inspectorName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Inspector/AgentValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Inspector/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Property">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Property/nameofvariable"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Property/associateValue"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//Property/defaultType"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//SpatialEntity">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//SpatialEntity/shapeName"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//SpatialEntity/shapePath"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute Asl.ecore#//SpatialEntity/type"/>
+    </genClasses>
+    <genClasses ecoreClass="Asl.ecore#//Polygon"/>
+    <genClasses ecoreClass="Asl.ecore#//Line"/>
+    <genClasses ecoreClass="Asl.ecore#//Point"/>
+  </genPackages>
+</genmodel:GenModel>

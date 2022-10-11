@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ecore:EPackage xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" name="abmodel" nsURI="http://ASL/1.0" nsPrefix="abmodel">
+  <eClassifiers xsi:type="ecore:EClass" name="ABModel">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsG" lowerBound="1"
+        eType="#//GlobalBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsS" lowerBound="1"
+        upperBound="-1" eType="#//AgentBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsE" lowerBound="1"
+        upperBound="-1" eType="#//ExperimentBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="modelName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="description" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="keywords" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="author" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="createOn" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EDate"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="AgentBlock">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasP" lowerBound="1" upperBound="-1"
+        eType="#//Plan" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasPr" lowerBound="1" upperBound="-1"
+        eType="#//Property" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameAgent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aspectName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="sphere"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="aspectFunction" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="agentArchitecture" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="skillofagent" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="simplePlan" eSuperTypes="#//Plan">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalBlock">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Role"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsGl" lowerBound="1"
+        upperBound="-1" eType="#//GlobalVariable" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsSE" lowerBound="1"
+        upperBound="-1" eType="#//SpatialEntity" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="GlobalVariable">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="init" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
+        defaultValueLiteral="false"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="gvarName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="initValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Parameter">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="paramName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetVariable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Output">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="id" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasM" lowerBound="1" upperBound="-1"
+        eType="#//Monitor"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="containsD" lowerBound="1"
+        upperBound="-1" eType="#//Display" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasEF" lowerBound="1" upperBound="-1"
+        eType="#//ExportFile" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasI" lowerBound="1" upperBound="-1"
+        eType="#//Inspector" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Display">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Role"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="displayType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Plan">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="planName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="intention" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Monitor">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="label" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="targetVar" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExperimentBlock">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="hasPa" lowerBound="1" upperBound="-1"
+        eType="#//Parameter" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="output" lowerBound="1"
+        upperBound="-1" eType="#//Output" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="gui"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="expName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Reflex" eSuperTypes="#//Plan">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="existReflex" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="goal" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ComplexePlan" eSuperTypes="#//Plan">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Description"/>
+    </eAnnotations>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="returnType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ExportFile">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="fileName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inspector">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="inspectorName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="AgentValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Property">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="nameofvariable" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="associateValue" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="defaultType" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="SpatialEntity">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shapeName" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="shapePath" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="type" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"
+        defaultValueLiteral="file"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Polygon" eSuperTypes="#//SpatialEntity">
+    <eAnnotations source="http://www.obeo.fr/dsl/dnc/archetype">
+      <details key="archetype" value="Thing"/>
+    </eAnnotations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//SpatialEntity"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Point" eSuperTypes="#//SpatialEntity"/>
+</ecore:EPackage>
