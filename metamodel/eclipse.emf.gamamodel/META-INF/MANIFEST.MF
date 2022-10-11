@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: %pluginName
+Bundle-SymbolicName: eclipse.emf.abmodel;singleton:=true
+Automatic-Module-Name: eclipse.emf.abmodel
+Bundle-Version: 0.1.0.qualifier
+Bundle-ClassPath: .
+Bundle-Vendor: %providerName
+Bundle-Localization: plugin
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Export-Package: eclipse.emf.abmodel.model.abmodel,
+ eclipse.emf.abmodel.model.abmodel.impl,
+ eclipse.emf.abmodel.model.abmodel.util
+Require-Bundle: org.eclipse.core.runtime,
+ org.eclipse.emf.ecore;visibility:=reexport
+Bundle-ActivationPolicy: lazy
