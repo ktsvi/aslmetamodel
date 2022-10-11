@@ -1,0 +1,76 @@
+«IMPORT gamamodel»
+«DEFINE main FOR Gamamodel»
+«FILE this.modelName + ".gaml"»
+/*==============================================================================
+--------POWER BY GSL2GAML MAS GENERATOR FOR GAMA PLATFORM-------
+Model Name : «this.modelName» Description : «this.description» 
+Keywords : «this.keywords» Author : «this.author» Created on : «this.createdOn»
+==============================================================================*/
+
+model «this.modelName»
+/* Definition of global variables */
+«EXPAND globalblock FOREACH this.containsglobal»
+/* Definition of Agents */
+«EXPAND specie FOREACH this.containsspecie»
+/* Definition of experiments */
+«EXPAND experiment FOREACH this.containsexperiment»
+«ENDFILE»
+«ENDDEFINE»
+
+«DEFINE globalblock FOR GlobalBlock»
+global{
+ «EXPAND globalVariable FOREACH containsglobalvariable»
+ «IF init != false»
+  init {  /*Add your own initialization code here*/   }
+ «ENDIF»
+}
+«ENDDEFINE»
+
+«DEFINE globalVariable FOR GlobalVariable»
+          «this.type »  «this.gvarName» <- «this.initValue»;
+«ENDDEFINE»
+«DEFINE specie FOR AgentBlock»
+species «this.nameAgent» «IF this.skillofspecie!=""»skills:[«this.skillofspecie»]«ENDIF» {
+  «EXPAND propertie FOREACH this.haspropertie»
+  «IF this.initfunction != false» init{ //add initialization content here} «ENDIF»
+  «IF this.aspectfunction != false» aspect «this.aspectName»{ //add initialization content here} «ENDIF»
+  «EXPAND action FOREACH this.containsaction»
+  «EXPAND reflex FOREACH this.containsreflex»
+  
+ }
+«ENDDEFINE»
+«DEFINE action FOR Action»
+    action «this.actionName» {/*describes your action here*/}    
+«ENDDEFINE»
+«DEFINE reflex FOR Reflex»
+  «IF this.actionName!=""»reflex «this.actionName» when: «IF this.condition!=""» «this.condition»«ENDIF»{/*describes the reflex behavior here*/}«ENDIF»    
+«ENDDEFINE»
+«DEFINE propertie FOR Propertie»
+   «this.type» «this.propertieName»«IF this.initValue!="" » <- «this.initValue»«ENDIF»;
+«ENDDEFINE»
+
+«DEFINE experiment FOR ExperimentBlock»
+	«EXPAND parameter FOREACH this.hasparameter»
+	output { 
+	  «EXPAND output FOREACH this.hasoutput»
+	}
+«ENDDEFINE»
+«DEFINE parameter FOR Parameter»
+  parameter «this.parameterName »: var: «this.targetVariable»: category: "«this.categorie»" ;
+«ENDDEFINE»
+«DEFINE output FOR Output»
+  /*«this.id»: */
+   «EXPAND display FOREACH this.hasdisplays»
+   «EXPAND exportFile FOREACH this.hasexportfile»
+«ENDDEFINE»
+«DEFINE display FOR Display»
+	  display «this.displayName» {
+	  	 «EXPAND specieBlock FOREACH this.specieblock»
+	    }	
+«ENDDEFINE»
+«DEFINE exportFile FOR Exportfile»
+ «IF this.fileName !=""»output_file name:"«this.fileName»" type:«this.fileType» data:data_to_write_there;«ENDIF»   
+«ENDDEFINE»
+«DEFINE specieBlock FOR SpecieBlock»
+    	«this.aspectName» «this.specieBlockName» line: #«this.Color»
+«ENDDEFINE»
